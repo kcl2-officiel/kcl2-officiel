@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.C.L2-OFFICIEL | Vos Solutions au Même Endroit</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131c2e;
+            --primary: #00d2ff;
+            --accent: #ff9900;
+            --whatsapp: #25d366;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #1a233a, #0b0f19);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(255, 153, 0, 0.2);
+        }
+
+        .badge-top {
+            background-color: var(--accent);
+            color: #000;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 15px 0 5px;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .sub-tagline {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            display: inline-block;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            padding: 6px 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .service-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .features-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-box {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #13221b, #0b0f19);
+            border: 2px solid var(--whatsapp);
+            border-radius: 15px;
+        }
+
+        .contact-box h2 {
+            color: var(--whatsapp);
+            margin-bottom: 15px;
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--whatsapp);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: background 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer span {
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge-top">Service Rapide, Sécurisé & Fiable</span>
+            <h1>K.C.L2 - OFFICIEL</h1>
+            <p class="tagline">Vos Solutions, Au Même Endroit !</p>
+            <p class="sub-tagline">Votre satisfaction est notre priorité absolue.</p>
+        </header>
+
+        <h2 class="section-title">Nos Prestations</h2>
+        
+        <div class="services-grid">
+            <!-- Affiche de Mariage -->
+            <div class="service-card">
+                <h3>💍 Affiches & Design</h3>
+                <ul>
+                    <li>✨ Affiche de Mariage ou Anniversaire</li>
+                    <li>🎨 Design Professionnel Unique</li>
+                    <li>🔥 Visuels sur-mesure et originaux</li>
+                </ul>
+            </div>
+
+            <!-- VPN & Connexion -->
+            <div class="service-card">
+                <h3>🛡️ VPN & Internet</h3>
+                <ul>
+                    <li>⚡ Connexion Rapide, Sécurisée & Stable</li>
+                    <li>🌐 Tous réseaux - Disponible 24h/24</li>
+                    <li>📱 Dark Tunnel ou HTTP Injector</li>
+                </ul>
+            </div>
+
+            <!-- TikTok & Monétisation -->
+            <div class="service-card">
+                <h3>📱 TikTok & Réseaux</h3>
+                <ul>
+                    <li>🚀 Création de compte & Configuration</li>
+                    <li>📈 Techniques de croissance</li>
+                    <li>💰 Monétisation & Vues 100% réelles</li>
+                </ul>
+            </div>
+
+            <!-- Facebook Illimité -->
+            <div class="service-card">
+                <h3>🌐 Facebook Illimité</h3>
+                <ul>
+                    <li>♾️ Profils illimités sans blocage</li>
+                    <li>🔒 Sécurisé & 100% efficace</li>
+                    <li>🚀 Profitez sans restriction</li>
+                </ul>
+            </div>
+
+            <!-- Hacking Éthique -->
+            <div class="service-card">
+                <h3>💻 Hacking Éthique</h3>
+                <ul>
+                    <li>🛡️ Apprenez la sécurité des systèmes</li>
+                    <li>🔍 Test d'intrusion & d'anonymat</li>
+                    <li>⚖️ Devenez expert et travaillez légalement</li>
+                </ul>
+            </div>
+
+            <!-- Abonnements Netflix & Spotify -->
+            <div class="service-card">
+                <h3>🍿 Abonnements Premium</h3>
+                <ul>
+                    <li>🔴 NETFLIX : Films & séries illimités (HD/Ultra HD)</li>
+                    <li>🟢 SPOTIFY : Musique illimitée sans publicité</li>
+                    <li>⚡ Activation rapide & instantanée</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ce que nous offrons / Pourquoi nous choisir -->
+        <div class="features-section">
+            <h3 style="color: var(--accent); text-align: center; margin-bottom: 15px;">⭐ Pourquoi Nous Choisir ?</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>⚡ Rapide & Efficace</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Prise en charge instantanée</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔒 Sécurité Maximale</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Confidentialité garantie</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🏆 Résultats Garantis</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Méthodes testées et approuvées</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎧 Support 24h/24</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Assistance disponible à tout moment</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Direct -->
+        <div class="contact-box">
+            <h2>Contactez-Moi Maintenant</h2>
+            <p>Pour toutes vos demandes, formations et abonnements :</p>
+            <div class="phone-number">+223 72 90 40 72</div>
+            <a href="https://wa.me/22372904072?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20K.C.L2" class="btn-whatsapp" target="_blank">Discuter sur WhatsApp</a>
+        </div>
+
+        <footer>
+            <p><strong>K.C.L2-OFFICIEL</strong> - La Qualité - La Confiance - Le Résultat.</p>
+            <p style="margin-top: 5px;">Compatible Android et Télévision (Smart TV)</p>
+        </footer>
+    </div>
+
+</body>
+</html>
